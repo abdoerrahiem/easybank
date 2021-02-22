@@ -1,3 +1,3 @@
 ### Easybank Landing Page
 
-#### Deployed here:
+#### Deployed here: https://easybank-beta-one.vercel.app/
