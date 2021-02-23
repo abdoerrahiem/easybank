@@ -1,18 +1,26 @@
+const body = document.querySelector('body')
 const hamburger = document.querySelector('#hamburger')
 const header = document.querySelector('.header')
 const overlay = document.querySelector('.overlay')
+const fades = document.querySelectorAll('.has-fade')
 
 hamburger.addEventListener('click', () => {
   console.log('click')
   if (header.classList.contains('open')) {
     // Close hamburger
+    body.classList.remove('noscroll')
     header.classList.remove('open')
-    overlay.classList.remove('fade-in')
-    overlay.classList.add('fade-out')
+    fades.forEach((fade) => {
+      fade.classList.remove('fade-in')
+      fade.classList.add('fade-out')
+    })
   } else {
     // Open hamburger
+    body.classList.add('noscroll')
     header.classList.add('open')
-    overlay.classList.remove('fade-out')
-    overlay.classList.add('fade-in')
+    fades.forEach((fade) => {
+      fade.classList.remove('fade-out')
+      fade.classList.add('fade-in')
+    })
   }
 })
